@@ -1,0 +1,125 @@
+.gemline {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+}
+
+.gemline.h1,
+.gemline.h2,
+.gemline.h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+.gemline.quote {
+  font-family: "Playfair Display", serif;
+}
+
+.gemline.pre {
+  font-family: "Spline Sans Mono", monospace;
+}
+
+#gemedit {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+}
+
+.gemline {
+  border: none;
+
+  display: flex;
+  align-items: stretch;
+
+  cursor: text;
+
+  line-height: 1.5;
+  min-height: 1.5em;
+
+  outline: none;
+}
+
+.gemline br {
+  display: none;
+}
+
+.gemline:empty:before {
+  content: ".";
+  visibility: hidden;
+}
+
+.gemline.h3 {
+  font-size: 1.25rem;
+}
+
+.gemline.h2 {
+  font-size: 1.75rem;
+}
+
+.gemline.h1 {
+  font-size: 2.5rem;
+}
+
+.gemline.quote {
+  background: #f9f9f9;
+  color: #333;
+
+  padding: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.1rem;
+  border-radius: 0.25em;
+}
+
+.gemline.quote::before {
+  content: open-quote;
+  font-style: normal;
+  color: #ccc;
+
+  padding-right: 0.5rem;
+  font-size: 4rem;
+
+  padding-top: 1.25rem;
+  line-height: 0;
+}
+
+.gemline.quote + .gemline.quote {
+  padding-top: 0;
+}
+
+.gemline.quote::after {
+  content: close-quote;
+  visibility: hidden;
+}
+
+.gemline.quote + .gemline.quote::before {
+  visibility: hidden;
+}
+
+.gemline.quote:not(:has(+ .gemline.quote)) {
+  padding-bottom: 1.5rem;
+}
+
+.gemline.li {
+  display: list-item;
+  list-style-position: inside;
+}
+
+.gemline.pre {
+  white-space: pre;
+  overflow-x: scroll;
+  font-size: 0.9rem;
+
+  background: #f5f5f5;
+  padding: 1rem;
+}
+
+.gemline + .gemline.h1 {
+  margin-top: 1rem;
+}
+
+.gemline.gemline + .gemline.h2 {
+  margin-top: 0.5rem;
+}
+
+.gemline.gemline + .gemline.h3 {
+  margin-top: 0.25rem;
+}
